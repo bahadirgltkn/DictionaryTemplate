@@ -29,7 +29,12 @@ namespace DictionaryTemplate.Infrastructure.Persistance.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
+                var conn = "Server=DESKTOP-BDT2C5E\\BHDRGLTKN;Database=dictionarytemplate;Trusted_Connection=SSPI;Encrypt=false;TrustServerCertificate=true";
 
+                optionsBuilder.UseSqlServer(conn, opt =>
+                {
+                    opt.EnableRetryOnFailure();
+                });
             }
         }
 
