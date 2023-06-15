@@ -18,6 +18,12 @@ namespace DictionaryTemplate.Infrastructure.Persistance.Extensions
                     opt.EnableRetryOnFailure();
                 });
             });
+
+            // if you want your tables to be full at startup, you can run it once.
+
+            //var seedData = new SeedData();
+            //seedData.SeedAsync(configuration).GetAwaiter().GetResult();
+
             return services;
         }
     }
