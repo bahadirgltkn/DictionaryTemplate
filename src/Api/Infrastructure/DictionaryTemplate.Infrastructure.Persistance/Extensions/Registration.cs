@@ -1,4 +1,6 @@
-﻿using DictionaryTemplate.Infrastructure.Persistance.Contexts;
+﻿using DictionaryTemplate.Api.Application.Interfaces.Repositories;
+using DictionaryTemplate.Infrastructure.Persistance.Contexts;
+using DictionaryTemplate.Infrastructure.Persistance.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,6 +25,8 @@ namespace DictionaryTemplate.Infrastructure.Persistance.Extensions
 
             //var seedData = new SeedData();
             //seedData.SeedAsync(configuration).GetAwaiter().GetResult();
+
+            services.AddScoped<IUserRepository, UserRepository>();
 
             return services;
         }
