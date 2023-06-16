@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\DictionaryTemplate.Api.Application\DictionaryTemplate.Api.Application.csproj" />
     <ProjectReference Include="..\..\Core\DictionaryTemplate.Api.Domain\DictionaryTemplate.Api.Domain.csproj" />
   </ItemGroup>
 
