@@ -9,11 +9,11 @@ namespace DictionaryTemplate.Api.Application.Extensions
     {
         public static IServiceCollection AddApplicationRegistration(this IServiceCollection services)
         {
-            var assembly = Assembly.GetExecutingAssembly();
-
-            services.AddMediatR(assembly);
-            services.AddAutoMapper(assembly);
-            services.AddValidatorsFromAssembly(assembly);
+            services.AddMediatR(cfg => {
+                cfg.RegisterServicesFromAssembly(typeof(Registration).Assembly);
+            });
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
             return services;
         }
