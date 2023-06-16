@@ -1,4 +1,4 @@
-﻿using DictinoaryTemplate.Common.ViewModels;
+﻿using DictinoaryTemplate.Common.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
